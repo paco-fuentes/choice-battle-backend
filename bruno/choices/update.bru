@@ -1,0 +1,21 @@
+meta {
+  name: Update Choice
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/choices/:id
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body {
+  json {
+    label: "Nueva etiqueta"
+  }
+}

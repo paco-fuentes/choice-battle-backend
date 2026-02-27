@@ -1,0 +1,22 @@
+meta {
+  name: Create Choice
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/choices
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body {
+  json {
+    room_id: "{{uuid}}"
+    label: "Opción 1"
+  }
+}

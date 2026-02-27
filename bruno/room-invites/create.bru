@@ -1,0 +1,23 @@
+meta {
+  name: Create Invite
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/room-invites
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body {
+  json {
+    room_id: "{{uuid}}"
+    code: "INV123"
+    max_uses: 3
+  }
+}

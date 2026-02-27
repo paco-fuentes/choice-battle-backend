@@ -1,0 +1,15 @@
+meta {
+  name: Vote Choice
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/choices/:id/vote
+  body: none
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}

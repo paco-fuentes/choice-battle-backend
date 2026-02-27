@@ -1,0 +1,21 @@
+meta {
+  name: Update Room
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/rooms/:id
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body {
+  json {
+    status: "playing"
+  }
+}

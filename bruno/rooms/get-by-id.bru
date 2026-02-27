@@ -1,0 +1,15 @@
+meta {
+  name: Get Room by ID
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/rooms/:id
+  body: none
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}

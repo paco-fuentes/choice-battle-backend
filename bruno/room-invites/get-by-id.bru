@@ -1,0 +1,15 @@
+meta {
+  name: Get Invite by ID
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/room-invites/:id
+  body: none
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}

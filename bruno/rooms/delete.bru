@@ -1,0 +1,15 @@
+meta {
+  name: Delete Room
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{baseUrl}}/rooms/:id
+  body: none
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}

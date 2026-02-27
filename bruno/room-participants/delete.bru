@@ -1,0 +1,15 @@
+meta {
+  name: Remove Participant
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{baseUrl}}/room-participants/:id
+  body: none
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}

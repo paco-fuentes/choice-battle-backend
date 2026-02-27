@@ -1,0 +1,15 @@
+meta {
+  name: Delete Choice
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{baseUrl}}/choices/:id
+  body: none
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
