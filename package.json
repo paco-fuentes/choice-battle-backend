@@ -1,0 +1,36 @@
+{
+  "name": "choice-battle-backend",
+  "version": "0.1.0",
+  "description": "Choice battle backend",
+  "keywords": [
+    "choices",
+    "-",
+    "battles"
+  ],
+  "homepage": "https://github.com/paco-fuentes/choice-battle-backend#readme",
+  "bugs": {
+    "url": "https://github.com/paco-fuentes/choice-battle-backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paco-fuentes/choice-battle-backend.git"
+  },
+  "license": "ISC",
+  "author": "Paco Fuentes",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test tests/**/*.test.js",
+    "test:watch": "node --test --watch tests/**/*.test.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.47.0",
+    "dotenv": "^17.3.1",
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
