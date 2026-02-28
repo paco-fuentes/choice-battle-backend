@@ -1,4 +1,6 @@
 import express from 'express';
+import swaggerUi from 'swagger-ui-express';
+import swaggerJsdoc from 'swagger-jsdoc';
 import { supabase } from './lib/database/supabase.js';
 
 import { createUserRepository } from './lib/repositories/user.repository.js';
@@ -23,6 +25,39 @@ export const createApp = () => {
   const app = express();
 
   app.use(express.json());
+
+  const swaggerOptions = {
+    definition: {
+      openapi: '3.0.0',
+      info: {
+        title: 'Choice Battle API',
+        version: '1.0.0',
+        description: 'API para la aplicación Choice Battle',
+      },
+      servers: [
+        {
+          url: 'http://localhost:3000',
+          description: 'Servidor local',
+        },
+      ],
+    },
+    apis: ['./src/lib/routes/*.js'],
+  };
+
+  const swaggerSpec = swaggerJsdoc(swaggerOptions);
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
+    swaggerOptions: {
+      urls: [
+        {
+          url: '/api-docs.json',
+          name: 'Choice Battle API'
+        }
+      ]
+    }
+  }));
+  app.get('/api-docs.json', (req, res) => {
+    res.json(swaggerSpec);
+  });
 
   const userRepository = createUserRepository(supabase);
   const roomRepository = createRoomRepository(supabase);
